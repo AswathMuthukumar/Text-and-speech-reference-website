@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>TSA Portal</title>
+   
+    <style>
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E6E6FA; /* Lavender background */
+    color: #333333; /* Dark gray text for readability */
+    transition: background-color 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #D3D3D3; 
+    color: #5A4F6E; /* Dark Lavender text color */
+    margin: 0;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+h1:hover {
+    background-color: #B0B0B0; /* Slightly darker gray on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    gap: 20px;
+    animation: fadeIn 1s ease-in-out;
+    width: 80%;
+    max-width: 1200px;
+}
+
+ul li {
+    padding: 15px;
+    background-color: #FFFFFF; /* White background for items */
+    border: 2px solid #D3D3D3; /* Soft gray border */
+    border-radius: 12px;
+    font-size: 1.2rem;
+    color: #5A4F6E; /* Dark Lavender text for items */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+ul li img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ensures proper image scaling */
+    border-radius: 10px 10px 0 0; /* Rounded top corners for images */
+}
+
+ul li h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5rem;
+    color: #9B7BB5; /* Medium Lavender for titles */
+    text-align: center;
+}
+
+ul li p {
+    margin: 5px 0;
+    font-size: 1rem;
+    text-align: center;
+    color: #B3B3B3; /* Light gray text for descriptions */
+}
+
+a {
+    text-decoration: none;
+    color: #9B7BB5; /* Medium Lavender for links */
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #5A4F6E; /* Dark Lavender on hover */
+    transform: scale(1.05);
+}
+
+.content-section {
+    display: none;
+    padding: 30px;
+    background: #FFFFFF; /* White background for content sections */
+    border: 2px solid #D3D3D3; /* Soft gray border */
+    margin: 20px auto;
+    border-radius: 15px;
+    animation: slideDown 0.5s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 90%; /* Larger width for content sections */
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 800px; /* Enlarged PDF view */
+    border: none;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+iframe:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+</style>
+    
+</head>
+<body>
+    <h1>TSA Study Portal</h1><br>
+    <h3>"Text and speech analysis is more than understanding words; it's about uncovering the stories, emotions, and patterns hidden between the lines and syllables."</h3>
+    <ul>
+        <li><a href="#" onclick="toggleSection('syllabus-options')">Notes</a></li>
+        <li><a href="#" onclick="toggleSection('projects')">Projects</a></li>
+        <li><a href="#" onclick="toggleChatbox()">Chat with Assistant</a></li>
+    </ul>
+
+    <!-- Syllabus Section -->
+    <div id="syllabus-options" class="content-section">
+        <h2>Reference Notes</h2>
+        <ul>
+            <li><a href="#" onclick="showPDF('CS2V14-TSA-UNIT 1, 2-NOTES (1).pdf')">Unit 1,2</a></li>
+            <li><a href="#" onclick="showPDF('CS2V14-TSA-UNIT 3-NOTES-1.pdf')">Unit 3(1)</a></li>
+            <li><a href="#" onclick="showPDF('CS2V14-TSA-UNIT 3-NOTES-2.pdf')">Unit 3(2)</a></li>
+            <li><a href="#" onclick="showPDF('CS2V14-TSA-UNIT 4-NOTES.pdf')">Unit 4</a></li>
+            <li><a href="#" onclick="showPDF('CS2V14-TEXT AND SPEECH ANALYSIS - ALL 5 UNIT NOTES.pdf')">All Five unit notes</a></li>
+            <li><a href="#" onclick="showPDF('CS2V14-TSA-UNTI1-NOTES,QB.pdf')">Unit 1-Question Bank</a></li>
+            <li><a href="#" onclick="showPDF('CS2V14-TSA-24-25ODD-ST1-Assignment1Question.pdf')">First Assignment 1-Question</a></li>
+        </ul>
+        <iframe id="syllabus-pdf-viewer"></iframe>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="content-section">
+        <h2>Projects</h2>
+        <ul>
+            <li><a href="#" onclick="showPDF('JOBS AND SKILLS RECOMMENDATION SYSTEM.pdf')">Project 1: JOBS AND SKILLS RECOMMENDATION SYSTEM</a></li>
+            <li><a href="#" onclick="showPDF('Mindcare Chatbot.pdf')">Project 2: Mindcare Chatbot</a></li>
+            <li><a href="#" onclick="showPDF('PHONETIC TRANSCRIPTION WITH PROSODY ANALYSIS.pdf')">Project 3: PHONETIC TRANSCRIPTION WITH PROSODY ANALYSIS</a></li>
+            <li><a href="#" onclick="showPDF('REAL TIME FINANCIAL ASSISTANT CHATBOT .pdf')">Project 4: REAL TIME FINANCIAL ASSISTANT CHATBOT</a></li>
+            <li><a href="#" onclick="showPDF('REAL TIME VOICE LANGUAGE TRANSLATOR .pdf')">Project 5: REAL TIME VOICE LANGUAGE TRANSLATOR</a></li>
+            <li><a href="#" onclick="showPDF('REALTIMEVOICEAUTHENTICATION.pdf')">Project 6: REALTIME VOICE AUTHENTICATION</a></li>
+            <li><a href="#" onclick="showPDF('SENTIMENT ANALYSIS CHATBOT .pdf')">Project 7: SENTIMENT ANALYSIS CHATBOT </a></li>
+            <li><a href="#" onclick="showPDF('SENTISPEAK  TONE MOOD DETECTOR .pdf')">Project 8: SENTISPEAK  TONE MOOD DETECTOR </a></li>
+            <li><a href="#" onclick="showPDF('SIMPLIFYING TEXT TO SPEECH CONVERSION .pdf')">Project 9: SIMPLIFYING TEXT TO SPEECH CONVERSION </a></li>
+            <li><a href="#" onclick="showPDF('Travel planner chatbot.pdf')">Project 10: Travel planner chatbot</a></li>
+            <li><a href="#" onclick="showPDF('Dietbot.pdf')">Project 11: Dietbot</a></li>
+            <li><a href="#" onclick="showPDF('Customised workouts using cahtbots.pdf')">Project 12: Customised workouts using cahtbots</a></li>
+            <li><a href="#" onclick="showPDF('Chatbot for healthcare.pdf')">Project 13: Chatbot for healthcare</a></li>
+            <li><a href="#" onclick="showPDF('AI Driven virtual stylist.pdf')">Project 14: AI Driven virtual stylist</a></li>
+            <li><a href="#" onclick="showPDF('Accessible audio book converter.pdf')">Project 15: Accessible audio book converter</a></li>
+        </ul>
+        <iframe id="projects-pdf-viewer"></iframe>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chatbox" class="content-section">
+        <h2>Chat with Assistant</h2>
+        <div class="messages" id="messages"></div>
+        <input type="text" id="user-input" placeholder="Ask something...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // Toggle sections visibility
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                if (section.id === sectionId) {
+                    section.style.display = section.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        // Show PDF in the appropriate iframe
+        function showPDF(pdfFileName) {
+            // Find the visible content section
+            const visibleSection = document.querySelector('.content-section[style*="display: block"]');
+            if (visibleSection) {
+                const pdfViewer = visibleSection.querySelector('iframe');
+                if (pdfViewer) {
+                    pdfViewer.src = `/static/pdfs/${pdfFileName}`;
+                }
+            }
+        }
+
+        // Show and hide the chatbox
+        function toggleChatbox() {
+            toggleSection('chatbox');
+        }
+
+        // Send message to the backend
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const messagesDiv = document.getElementById('messages');
+
+            // Append user's message
+            messagesDiv.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
+
+            // Clear input field
+            document.getElementById('user-input').value = '';
+
+            // Make API request
+            fetch('/get_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `user_input=${encodeURIComponent(userInput)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                messagesDiv.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+                messagesDiv.scrollTop = messagesDiv.scrollHeight; // Scroll to bottom
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
